@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>ServletPrincipal</servlet-name>
+        <servlet-class>br.com.questionario.servlets.ServletPrincipal</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletNegocio</servlet-name>
+        <servlet-class>br.com.negocio.servlets.ServletNegocio</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servlets</servlet-name>
+        <servlet-class>br.com.persistencia.ServletsPersistencia</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Questionario</servlet-name>
+        <servlet-class>br.com.negocio.servlets.Questionario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletPrincipal</servlet-name>
+        <url-pattern>/ServletPrincipal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletNegocio</servlet-name>
+        <url-pattern>/ServletNegocio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servlets</servlet-name>
+        <url-pattern>/servlets</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Questionario</servlet-name>
+        <url-pattern>/Questionario</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ErroWeb.jsp</location>
+    </error-page>
+</web-app>
