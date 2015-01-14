@@ -97,8 +97,8 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"comboBoxRealizacao\">  \n");
       out.write("                <label> \n");
       out.write("                    Que nota você daria para o instrutor deste treinamento?\n");
-      out.write("                    <select name=\"avaliaRealizacao\" size=\"0\">\n");
-      out.write("                        <option selected=\"selecaoRealizacao\">Escolha</option>\n");
+      out.write("                    <select name=\"avaliaInstrutor\" size=\"0\">\n");
+      out.write("                        <option selected=\"selecaoNotaInstrutor\">Escolha</option>\n");
       out.write("                        <option value=\"0\">0</option>\n");
       out.write("                        <option value=\"1\">1</option>\n");
       out.write("                        <option value=\"2\">2</option>\n");
@@ -141,8 +141,8 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("                ");
 
-                    if (request.getAttribute("NomeCompleto") != null) {
-                        out.print(request.getAttribute("NomeCompleto"));
+                    if (request.getAttribute("Questionario_Reacao") != null) {
+                        out.print(request.getAttribute("Questionario_Reacao"));
                     }
                 
       out.write("\n");

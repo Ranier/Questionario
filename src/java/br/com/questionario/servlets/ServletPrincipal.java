@@ -1,5 +1,7 @@
 package br.com.questionario.servlets;
 
+import br.com.DAO.QuestionarioDao;
+import br.com.modelo.Questionario;
 import java.io.IOException;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -7,29 +9,38 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import br.com.persistencia.QuestionarioJpaController;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ServletPrincipal extends HttpServlet {
 
+    
+        
+    
    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        String nome = request.getParameter("Nome");
-        String sobrenome = request.getParameter("Sobrenome");
-        request.setAttribute("NomeCompleto","Bem Vindo! " +nome +" "+ sobrenome);
+            throws ServletException, IOException, Exception {
         
-        request.getRequestDispatcher("Index.jsp").forward(request, response);
+       // String avaliaEpectativa = request.getParameter("avaliaEpectativa");
+       // String avaliaRealizacao = request.getParameter("avaliaRealizacao");
+       // String avaliaInstrutor = request.getParameter("avaliaInstrutor");
+        
+        //request.setAttribute("Questionario_Reacao","Bem Vindo! " +avaliaEpectativa +" "+ avaliaInstrutor);
+        
+        //request.getRequestDispatcher("Index.jsp").forward(request, response);
         
         EntityManagerFactory EmFactory = Persistence.createEntityManagerFactory("Questionario_ReacaoPU");
         
         Questionario q = new Questionario();
         
-        //BancoQuestionarioJpaController controle = new BancoQuestionarioJpaController(EmFactory);
+        QuestionarioJpaController controle = new QuestionarioJpaController(EmFactory);
         
-        //controle.create(q);
-        
+        controle.create(q);
+                
         }
-    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -43,7 +54,11 @@ public class ServletPrincipal extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(ServletPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -57,7 +72,11 @@ public class ServletPrincipal extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(ServletPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

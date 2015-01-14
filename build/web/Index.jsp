@@ -54,8 +54,8 @@
             <div class="comboBoxRealizacao">  
                 <label> 
                     Que nota você daria para o instrutor deste treinamento?
-                    <select name="avaliaRealizacao" size="0">
-                        <option selected="selecaoRealizacao">Escolha</option>
+                    <select name="avaliaInstrutor" size="0">
+                        <option selected="selecaoNotaInstrutor">Escolha</option>
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -97,8 +97,8 @@
             <h2>
 
                 <%
-                    if (request.getAttribute("NomeCompleto") != null) {
-                        out.print(request.getAttribute("NomeCompleto"));
+                    if (request.getAttribute("Questionario_Reacao") != null) {
+                        out.print(request.getAttribute("Questionario_Reacao"));
                     }
                 %>
 
