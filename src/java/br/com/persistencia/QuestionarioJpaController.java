@@ -119,6 +119,19 @@ public class QuestionarioJpaController implements Serializable {
         }
     }
 
+    public Questionario findQuestionarioPorCurso(Integer Idcurso) {
+        EntityManager em = getEntityManager();
+        try {
+            CriteriaQuery qc = em.getCriteriaBuilder().createQuery();
+            qc.select(qc.from(Questionario.class));
+            Query q = em.createQuery(qc);
+            //O retorno deve ser todas as occorencias que tem este ID.
+            return em.find(Questionario.class, Idcurso);
+        } finally {
+            em.close();
+        }
+    }
+
     public Questionario findQuestionario(Integer id) {
         EntityManager em = getEntityManager();
         try {
@@ -140,5 +153,5 @@ public class QuestionarioJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

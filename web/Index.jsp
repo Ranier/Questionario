@@ -14,7 +14,7 @@
             <div class="comboBoxExpectativa">  
                 <label>  
                     Como você avaliaria sua expectativa em relação ao curso?  
-                    <select name="avaliaEpectativa" size="0">  
+                    <select name="avaliaExpectativa" size="0">  
                         <option selected="selecaoExpectativa">Escolha</option>  
                         <option  value="0">0</option>  
                         <option  value="1">1</option>  

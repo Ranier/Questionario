@@ -57,7 +57,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"comboBoxExpectativa\">  \n");
       out.write("                <label>  \n");
       out.write("                    Como você avaliaria sua expectativa em relação ao curso?  \n");
-      out.write("                    <select name=\"avaliaEpectativa\" size=\"0\">  \n");
+      out.write("                    <select name=\"avaliaExpectativa\" size=\"0\">  \n");
       out.write("                        <option selected=\"selecaoExpectativa\">Escolha</option>  \n");
       out.write("                        <option  value=\"0\">0</option>  \n");
       out.write("                        <option  value=\"1\">1</option>  \n");

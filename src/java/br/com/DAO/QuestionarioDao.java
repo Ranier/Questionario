@@ -1,4 +1,3 @@
-
 package br.com.DAO;
 
 import br.com.modelo.Questionario;
@@ -7,8 +6,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class QuestionarioDao {
-    
-    
+
     public void persist(Questionario questionario) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Questionario_ReacaoPU");
         EntityManager em = emf.createEntityManager();
@@ -23,6 +21,5 @@ public class QuestionarioDao {
             em.close();
         }
     }
-    
-    
+
 }
